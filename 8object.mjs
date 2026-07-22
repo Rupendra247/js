@@ -6,4 +6,12 @@ let info = {
     weight: 60,
 };
 
-console.log(info.name)
+console.log(info.name) ;
+info.name = "rup";
+console.log(info.name);
+
+info.country = "nepal";
+console.log(info);
+
+delete info.weight;
+console.log(info)

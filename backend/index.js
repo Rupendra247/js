@@ -2,12 +2,18 @@
 // attach port to it
 
 import express from "express";
+import firstRoute from "./src/routes/firstRoutes.js";
+import productRoutes from "./src/routes/productRoutes.js";
 
 let app = express();
 
 app.listen(8000, () => {
   console.log("application runing at port 8000");
 });
+app.use(express.json()); // this is put to display the json input from postman in vs console i.e terminal
+
+app.use("/", firstRoute); //ctrl space for import
+app.use("/product", productRoutes);
 
 /*
 database
@@ -17,7 +23,7 @@ crud
  c = create   (post) 
  r = read     (get) 
  u = upate    (put/patch)
- d = delete   (delete)sss
+ d = delete   (delete)
 
 
 

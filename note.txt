@@ -1,0 +1,4 @@
+to make api 
+ make route 
+ use that route to index.js
+ 

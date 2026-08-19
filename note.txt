@@ -2,3 +2,12 @@ to make api
  make route 
  use that route to index.js
  
+
+ ./ we should used .js at last of the file
+
+
+ error finding 
+ line , file , what 
+ 
+ something is not defined or router is not defined  => {to solve it import}
+ cannot find  module     =>      {missing js}

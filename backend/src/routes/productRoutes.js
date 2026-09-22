@@ -4,33 +4,55 @@ import Product from "../schema/productSchema.js";
 let productRoutes = Router();
 
 productRoutes
-  .route("/") //localhost;8000/product
+  .route("/")
   .post(async (req, res, next) => {
     try {
-      let result = await Product.create(req.body);
-      res.status(200).json({
-      success:true,
-      message:"product created successfullty",
-      result: result,
-    })  
+      let product = new Product(req.body);
+      let savedProduct = await product.save();
+      res.status(201).json({
+        success: true,
+        message: "product created successfully",
+        data: savedProduct,
+      });
     } catch (error) {
       res.status(400).json({
         success: false,
         message: error.message,
-      })
+      });
     }
   })
   .get((req, res, next) => {
-    res.json("get product");
-    console.log(req.body);
+    res.json({
+      success: true,
+      message: "user created successfully",
+    });
+  });
+
+productRoutes
+  .route("/:id")
+  .post((req, res, next) => {
+    res.json({
+      success: true,
+      message: "user created successfully",
+    });
+  })
+  .get((req, res, next) => {
+    res.json({
+      success: true,
+      message: "user created successfully",
+    });
   })
   .put((req, res, next) => {
-    res.json("put product");
-    res.json("create put product");
+    res.json({
+      success: true,
+      message: "user created successfully",
+    });
   })
   .delete((req, res, next) => {
-    res.json("delet product");
-    res.json("create delete product");
+    res.json({
+      success: true,
+      message: "user created successfully",
+    });
   });
 
 export default productRoutes;

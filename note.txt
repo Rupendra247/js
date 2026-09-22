@@ -11,3 +11,7 @@ to make api
  
  something is not defined or router is not defined  => {to solve it import}
  cannot find  module     =>      {missing js}
+
+
+localhost:8000/a/b?price=1000&color=red
+route                        query

@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
-
+import dotenv from "dotenv";
+dotenv.config();
 const connectToDb = async () => {
-    await mongoose.connect("mongodb+srv://dhunganarupendra03_db_user:Mg1iQK4cW2IhodLV@cluster0.8wyysvb.mongodb.net/?appName=Cluster0");
+    await mongoose.connect(process.env.MONGODB_URL);
     console.log("application is connected to database successfully");
 };
 
